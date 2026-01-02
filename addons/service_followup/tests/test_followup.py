@@ -1,4 +1,13 @@
 # -*- coding: utf-8 -*-
+"""
+Test suite for the Service Follow-up module.
+
+Test Cases:
+    TestServiceFollowup: Contains all unit tests for the followup model
+        - test_01_state_flow: Validates state transitions (draft→sent→replied→closed)
+        - test_02_rating_constraint: Tests rating validation (must be 1-10)
+        - test_03_cron_reminder: Tests automated reminder activity creation
+"""
 
 from odoo.tests import TransactionCase, tagged
 from odoo.exceptions import ValidationError

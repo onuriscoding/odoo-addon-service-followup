@@ -1,4 +1,19 @@
 # -*- coding: utf-8 -*-
+"""
+This module contains the ServiceFollowup model for managing post-appointment
+customer follow-ups.
+
+Classes:
+    ServiceFollowup: Main model handling follow-up records with state workflow,
+                     customer ratings, and automated reminder scheduling.
+
+Key Methods:
+    - action_mark_sent(): Transitions follow-up to 'sent' state
+    - action_log_reply(): Records customer response and transitions to 'replied'
+    - action_close(): Closes the follow-up
+    - cron_followup_reminder(): Scheduled action creating reminder activities
+                                for overdue follow-ups
+"""
 
 from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
