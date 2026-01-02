@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Scheduled Action: Follow-up Reminder -->
+    <record id="ir_cron_followup_reminder" model="ir.cron">
+        <field name="name">Service Follow-up: Send Reminders</field>
+        <field name="model_id" ref="model_service_followup"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_followup_reminder()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active" eval="True"/>
+    </record>
+
+</odoo>
